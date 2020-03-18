@@ -54,11 +54,13 @@ By default, observers do not participate in the ISR list and cannot automaticall
 
 ## Install the demo
 
-Clone the [confluentinc/examples GitHub repo](https://github.com/confluentinc/examples) and go to the folder with the Multi-Region Replication demo:
+Clone the [confluentinc/examples GitHub repo](https://github.com/confluentinc/examples) and checkout the `master` branch:
 
 ```
 git clone https://github.com/confluentinc/examples
-cd examples/multiregion
+cd examples
+git checkout master
+cd multiregion
 ```
 
 ## Start Docker Compose

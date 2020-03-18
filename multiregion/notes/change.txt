@@ -1,0 +1,23 @@
+Update the following error message
+root@broker-west-1:/# kafka-configs --zookeeper zookeeper-west:2181 --entity-name multi-region-async --entity-type topics --alter --add-config confluent.placement.constraints=/etc/kafka/demo/placement-multi-region-sync.json
+When adding the confluent.placement.constraints configuration please use the --replica-placement flag
+Need a better error message
+
+Add documentation on how to run ADB to change replicament policies
+
+
+Change the name
+
+
+# Alter the config
+root@broker-west-1:/# root@broker-west-1:/# kafka-configs --zookeeper zookeeper-west:2181 --entity-name multi-region-async --entity-type topics --alter --add-config confluent.placement.constraints=/etc/kafka/demo/placement-multi-region-sync.json
+
+
+# Execute the plan
+root@broker-west-1:/# confluent-rebalancer execute --bootstrap-server broker-west-1:19091 --metrics-bootstrap-server broker-west-1:19091 --zookeeper zookeeper-west:2181 --throttle 10000000 --verbose
+
+
+# Finish the rebalance
+root@broker-west-1:/# confluent-rebalancer finish --zookeeper zookeeper-west:2181
+
+
